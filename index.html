@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- style link  -->
+    <link rel="stylesheet" href="css/form.css">
+    <!-- fontawesome link-->
+    <!-- fonawesome -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title> Smart-Academy</title>
+</head>
+
+<body>
+    <main class="main">
+        <header>
+            <div class="container1">
+            <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">SmartAcademy</h2>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                        <button onclick="showLoginForm()">Login
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </button>
+                        <div id="loginFormModal">
+                            <div id="loginFormContent">
+                                <span class="close" onclick="closeLoginForm()">&times;</span>
+                                <h2>Login</h2>
+                                <form id="loginForm">
+                                    <input type="text" id="username" name="username" required placeholder="Username">
+                                    <br>
+                                    <input type="password" id="password" name="password" required placeholder="Password">
+                                    <br>
+                                    <button type="submit" onclick="authenticate(event)">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="images/biglogo.png" alt="Educational Center Logo">
+        </div>
+        <h1>Welcome to Smart Academy</h1>
+        <p>Welcome to Smart Academy, where we provide top-notch education and guidance to help you achieve your academic
+            goals.</p>
+        </header>
+        <main>
+            <section class="registration-form">
+                <div id="formModals" class="modals">
+                    <div class="modal-contents">
+                        <h2>Add Student</h2>
+                        <input type="hidden" id="entryId">
+                        <div class="form-main">
+                            <label for="name">Name:</label>
+                            <br>
+                            <input type="text" id="name">
+                            <label for="surname">Surname:</label>
+
+                        <input type="text" id="surname">
+                        <label for="phone">Phone:</label>
+                        
+                        <input type="number" id="phone">
+                        
+                        <label for="date">date:</label>
+                        
+                        <input type="date" id="date">
+                        
+                        <label for="subject">Subject:</label>
+                        
+                        <select id="subject">
+                            <option value="English">English</option>
+                            <option value="Mathematics">Mathematics</option>
+                        </select>
+                        
+                        <label for="teacher">Teacher:</label>
+                        
+                        <select id="teacher"></select>
+                        
+                        <label for="payment">Payment:</label>
+                        
+                        <select id="payment">
+                            <option value="140000">140,000</option>
+                            <option value="120000">120,000</option>
+                            <option value="100000">100,000</option>
+                            <option value="0">free</option>
+                        </select>
+
+                        <button id="saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </main>
+    <!-- form end -->
+    <!-- footer and login start  -->
+    <footer>
+     
+    
+    </footer>
+    
+
+    <!-- hechkim ochmasin  -->
+    <div class="none">
+        <div class="logoute">
+            <button class="exit"><i class="fa-solid fa-arrow-right-from-bracket"></i> </button>
+        </div>
+        <div id="addTeacherModal" class="modal">
+            <div class="modal-content">
+                <span class="closes close">&times;</span>
+                <h2>Add Teacher</h2>
+                <label for="newTeacher">Teacher Name:</label>
+                <input type="text" id="newTeacher">
+                <label for="newSubject">Subject Name:</label>
+                <input type="text" id="newSubject">
+                <!-- <input type="number" id="newPayment"> -->
+                <!-- <label for="newPayment">Payment:</label> -->
+                <button id="saveTeacherBtn">Save</button>
+            </div>
+        </div>
+
+        <div id="addSubjectModal" class="form">
+            <div class="modal-content">
+                <span class="subjectClose close">&times;</span>
+
+                <h2>Add Subject</h2>
+                <label for="newSubject">Subject Name:</label>
+                <br>
+                <br>
+                <input type="text" id="newSubject">
+                <button id="saveSubjectBtn">Save</button>
+            </div>
+        </div>
+        <div class="filters">
+            <input type="text" id="searchName" placeholder="Search by Name">
+            <input type="text" id="searchSurname" placeholder="Search by Surname">
+            <select id="searchSubject">
+                <option value="">All Subjects</option>
+                <option value="English">English</option>
+                <option value="Mathematics">Mathematics</option>
+            </select>
+            <select id="searchTeacher">
+                <option value="">All Teacher</option>
+                <option value="Teacher1">Teacher1</option>
+                <option value="Teacher2">Teacher2</option>
+                <option value="Teacher3"> Teacher3</option>
+                <option value="Teacher4">Teacher3</option>
+            </select>
+            <select id="searchPayment">
+                <option value="">All Payments</option>
+                <option value="140000">140,000</option>
+                <option value="120000">120,000</option>
+                <option value="100000">100,000</option>
+                <option value="0">free</option>
+            </select>
+        </div>
+        <div class="btnAll">
+            <button id="addBtn">Add Student</button>
+            <!-- <button id="addSubjectBtn">Add Subject</button> -->
+            <button id="addTeacherBtn">Add Teacher</button>
+
+        </div>
+
+        <table id="dataTable" class="table table table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th class="indexId">№</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Phone</th>
+                    <th>Subject</th>
+                    <th>Teacher</th>
+                    <th>Date</th>
+                    <th>Payment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="dataTable">
+                <!-- All Data  -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button id="prevPageBtn"><i class="fa-solid fa-arrow-left-long"></i></button>
+
+            <button id="nextPageBtn"><i class="fa-solid fa-arrow-right-long"></i></button>
+        </div>
+
+        <div class="summary">
+
+            <p> O'quvchilar: <span id="totalStudents">0 </span> ta</p>
+            <hr>
+            <p> Jammi Summa: <span id="totalPayment">0 </span> so'm</p>
+            <hr>
+            <p>O'qtuvchi Uchun: <span id="totalProfit">0 </span> so'm</p>
+            <hr>
+            <p> Arenda: <span id="totalRent"> 0 </span> so'm</p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- firebas link -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <!-- toastify js link -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- app js -->
+    <script src="js/app.js"></script>
+    <!-- form  js-->
+    <script src="js/form.main.js"></script>
+</body>
+
+</html>

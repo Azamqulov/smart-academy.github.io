@@ -1,0 +1,72 @@
+@media(max-width:1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media(max-width:992px) {
+    .container {
+        max-width: 960px;
+        /* overflow: hidden; */
+
+    }
+
+    #searchName {
+        width: 45%;
+    }
+
+    #searchSurname {
+        width: 45%;
+
+    }
+
+    #searchSubject,
+    #searchTeacher,
+    #searchPayment {
+        width: 30%;
+    }
+
+    tbody {
+        overflow-x: scroll;
+    }
+}
+
+@media(max-width:768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    table {
+        display: block;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+}
+
+@media(max-width:576px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+
+
+    .filters input,
+    .filters select {
+        margin: 10px 0;
+        width: 100% !important;
+    }
+
+    .btnAll {
+        flex-direction: column;
+    }
+
+    .btnAll button {
+        width: 100%;
+
+    }
+}
